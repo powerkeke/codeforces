@@ -1,0 +1,26 @@
+/*
+题意：给定三个点a,b,c，询问是否存在一个点d，使得这三个点整体绕着d点旋转一定角度后，能让a去b的位置，b去c的位置
+思路：三点绕着的外接圆圆心旋转，1：判断if(ab==bc)；2：判断三点是否共线
+*/
+#include<bits/stdc++.h>
+using namespace std;
+#define pi acos(-1.0)
+#define inf 0x3f3f3f3f
+typedef long long ll;
+typedef double db;
+int mo[4][2] = { -1,0,1,0,0,-1,0,1 };
+//int mo[8][2] = { -1,0,1,0,-1,-1,1,1,0,-1,0,1,1,-1,-1,1 };
+const int maxn = 1e5 + 10;
+int n, m, is = 0, t, c = 0, ans = 0, p[maxn];
+int main() {
+	ios::sync_with_stdio(0);
+	cin.tie(0), cout.tie(0);
+	cout << fixed << setprecision(2);
+	ll a, b, c, d, e, f;
+	cin >> a >> b >> c >> d >> e >> f;
+	ll s1 = (d - b)*(d - b) + (c - a)*(c - a);
+	ll s2 = (d - f)*(d - f) + (c - e)*(c - e);
+	if ((ll)(d - b)*(e - c) == (ll)(c - a)*(f - d) || s1 != s2)cout << "NO" << "\n";
+	else cout << "YES" << "\n";
+	return 0;
+}
