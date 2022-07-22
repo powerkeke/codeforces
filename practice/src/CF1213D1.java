@@ -36,7 +36,6 @@ public class CF1213D1 {
                 if (num == m) break;
             }
             if (num == m) ans = Math.min(sum, ans);
-            if (p[n - m] < i) break;
         }
         System.out.println(ans);
     }
